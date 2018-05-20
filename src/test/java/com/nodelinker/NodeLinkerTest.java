@@ -6,6 +6,25 @@ public class NodeLinkerTest {
 
     public static void main(String... args) {
 
+        //prepare RootNode (Identical to the tree mentioned in assignment)
+        Node rootNodeArg = prepareRootNode();
+
+        //link childNodes as per the assignment
+        NodeLinker nodeLinker = new NodeLinker().setRootNode(rootNodeArg);
+
+        //Linked Siblings organized in a bucket
+        Map<Integer, Node[]> nodeArrayMap = nodeLinker.link();
+
+        //print the linked Siblings
+        System.out.println(nodeLinker.extractPrintableString(nodeArrayMap));
+    }
+
+    /**
+     *
+     * @return Node
+     */
+    public static Node prepareRootNode() {
+
         //node-1 for rootNode
         Node childNode1 = new Node("childNode1");
 
@@ -48,12 +67,7 @@ public class NodeLinkerTest {
         //append childs to rootNode
         rootNodeArg.Children = childNodeForRoot;
 
-        //link childNodes as per the assignment
-        NodeLinker nodeLinker = new NodeLinker().setRootNode(rootNodeArg);
-
-        Map<Integer, Node[]> nodeArrayMap = nodeLinker.link();
-
-        System.out.println(nodeLinker.extractPrintableString(nodeArrayMap));
+        return rootNodeArg;
     }
 
 

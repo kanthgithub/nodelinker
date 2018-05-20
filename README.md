@@ -30,7 +30,7 @@
 
 ## **After Linking siblings:**
 
-![alt text](https://raw.githubusercontent.com/kanthgithub/nodelinker/master/Tree_After_Linking_Siblings.png)
+![alt text](https://raw.githubusercontent.com/kanthgithub/nodelinker/master/After_Linking_Siblings.png)
 
 - childNode1 -> childNode2 -> childNode3 -> END
 - childNode1_1 -> childNode1_2 -> childNode3_1 -> END

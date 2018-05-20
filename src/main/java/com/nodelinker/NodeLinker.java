@@ -154,7 +154,7 @@ public class NodeLinker {
             stringBuffer.append("END").append("\n");
         }
 
-        return stringBuffer.toString();
+        return stringBuffer.toString().trim();
 
     }
 }

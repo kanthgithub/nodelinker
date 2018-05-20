@@ -23,12 +23,14 @@
 - Array: bucket to hold Siblings
 - Map: to organize siblings at identical level in a bucket
 
+## **Before Linking siblings:**
 
 ![alt text](https://raw.githubusercontent.com/kanthgithub/nodelinker/master/Tree.png)
 
 
 ## **After Linking siblings:**
 
+![alt text](https://raw.githubusercontent.com/kanthgithub/nodelinker/master/Tree_After_Linking_Siblings.png)
 
 - childNode1 -> childNode2 -> childNode3 -> END
 - childNode1_1 -> childNode1_2 -> childNode3_1 -> END

@@ -15,6 +15,8 @@ public class NodeLinkerTest {
         //Linked Siblings organized in a bucket
         Map<Integer, Node[]> nodeArrayMap = nodeLinker.link();
 
+
+
         //print the linked Siblings
         System.out.println(nodeLinker.extractPrintableString(nodeArrayMap));
     }

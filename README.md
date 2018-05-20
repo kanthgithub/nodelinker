@@ -24,3 +24,4 @@
 - Map: to organize siblings at identical level in a bucket
 
 
+![alt text](https://raw.githubusercontent.com/kanthgithub/nodelinker/master/Tree.png)

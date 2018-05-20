@@ -2,12 +2,20 @@ package com.nodelinker;
 
 import java.util.Map;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public class NodeLinkerTest {
 
-    public static void main(String... args) {
+    @Test
+    public void test_Sibling_Linkage() {
+
+        //given
 
         //prepare RootNode (Identical to the tree mentioned in assignment)
         Node rootNodeArg = prepareRootNode();
+
+        //when
 
         //link childNodes as per the assignment
         NodeLinker nodeLinker = new NodeLinker().setRootNode(rootNodeArg);
@@ -15,10 +23,22 @@ public class NodeLinkerTest {
         //Linked Siblings organized in a bucket
         Map<Integer, Node[]> nodeArrayMap = nodeLinker.link();
 
+        //then
 
+        Assert.assertNotNull(nodeArrayMap);
+
+        Assert.assertTrue(nodeArrayMap.size() == 2);
 
         //print the linked Siblings
-        System.out.println(nodeLinker.extractPrintableString(nodeArrayMap));
+        String linkedSiblingNamesAsString = nodeLinker.extractPrintableString(nodeArrayMap);
+
+        Assert.assertNotNull(linkedSiblingNamesAsString);
+
+        String expected_linkedSiblingNamesAsString = "childNode1 -> childNode2 -> childNode3 -> END\n" +
+                                                     "childNode1_1 -> childNode1_2 -> childNode3_1 -> END";
+
+        Assert.assertEquals(expected_linkedSiblingNamesAsString,linkedSiblingNamesAsString);
+
     }
 
     /**

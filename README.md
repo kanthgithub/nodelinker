@@ -25,3 +25,11 @@
 
 
 ![alt text](https://raw.githubusercontent.com/kanthgithub/nodelinker/master/Tree.png)
+
+
+## **After Linking siblings:**
+
+
+- childNode1 -> childNode2 -> childNode3 -> END
+- childNode1_1 -> childNode1_2 -> childNode3_1 -> END
+

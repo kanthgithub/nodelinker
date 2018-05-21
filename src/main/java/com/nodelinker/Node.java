@@ -7,6 +7,7 @@ public class Node {
     public Node[] Children;
     public Node right;
     public String name;
+    public Integer level;
 
     public Node(String name) {
         this.name = name;
@@ -19,14 +20,18 @@ public class Node {
         Node node = (Node) o;
         return Arrays.equals(Children, node.Children) &&
                 Objects.equals(right, node.right) &&
-                Objects.equals(name, node.name);
+                Objects.equals(name, node.name) &&
+                Objects.equals(level, node.level) &&
+
+                ;
     }
 
     @Override
     public int hashCode() {
 
-        int result = Objects.hash(right, name);
+        int result = Objects.hash(right, name,level);
         result = 31 * result + Arrays.hashCode(Children);
+
         return result;
     }
 
@@ -38,6 +43,7 @@ public class Node {
                 .add("name", this.name)
                 .add("Children", this.Children)
                 .add("right", this.right)
+                .add("level",this.level)
                 .toString();
     }
 }

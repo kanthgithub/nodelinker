@@ -54,6 +54,8 @@ public class NodeLinker_Better {
     public Map<Integer,LinkedList<Node>> extractSiblingLevelMap(){
 
         AtomicInteger siblingLevelCount = new AtomicInteger(0);
+        Integer maxLevel = 0;
+        Integer rootLevel = 0;
 
         LinkedList<Node> linkedList = new LinkedList<Node>();
 
@@ -70,11 +72,21 @@ public class NodeLinker_Better {
 
                 LinkedList<Node> nodeList = new LinkedList<Node>();
 
+                int parentLevel = nodeFromList.level;
+
                 if(nodeFromList.Children!=null) {
                     for (Node tempNode : nodeFromList.Children) {
                         if (tempNode != null) {
+
+                            if(parentLabel!=null) {
+                                tempNode.level = parentLevel + 1;
+                            }else{
+                                tempNode.level = rootLevel+1;
+                            }
+
                             nodeList.add(tempNode);
-                            tempNode.level = mapIndex;
+
+                            maxLevel = tempNode.level;
                         }
                     }
                 }
@@ -90,6 +102,7 @@ public class NodeLinker_Better {
         for(int level=0;level < maxLevel;level++){
 
             //extract all nodes at level
+            
 
 
         }

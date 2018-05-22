@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
-public class NodeLinker {
+public class NodeLinker2 {
 
     //rootNode property
     private Node rootNode;
@@ -18,7 +18,7 @@ public class NodeLinker {
         return rootNode;
     }
 
-    public NodeLinker setRootNode(Node rootNode) {
+    public NodeLinker2 setRootNode(Node rootNode) {
         this.rootNode = rootNode;
         return this;
     }
@@ -37,29 +37,25 @@ public class NodeLinker {
      * forEach ParentNode, extract children and link the siblings
      *
      * end result will be that tree contains nodes where all children at same level are linked
+
+     *
      *
      * @return Map of Nodes
      */
     public Map<Integer,Node> extractLinkedSiblingMap(){
 
-        LinkedList<Node> linkedList = new LinkedList<Node>();
-        linkedList.add(rootNode);
+        Node node =rootNode;
 
-        while (!linkedList.isEmpty())
+        while (node.Children!=null )
         {
-            Node node = linkedList.poll();
+            //Node node = linkedList.poll();
 
             if(node!=null && node.Children!=null ) {
 
                 int parentLevel = node.level!=null ? node.level : 0;
 
                 if(node.Children!=null) {
-
-                    //link all siblings
                     linkSiblings( node, parentLevel);
-
-                    //
-                    linkedList.addAll(Arrays.stream(node.Children).collect(Collectors.toCollection(LinkedList::new)));
                 }
             }
         }

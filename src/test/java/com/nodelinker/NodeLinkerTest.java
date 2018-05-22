@@ -1,10 +1,9 @@
 package com.nodelinker;
 
-import java.util.LinkedList;
-import java.util.Map;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Map;
 
 public class NodeLinkerTest {
 
@@ -19,10 +18,10 @@ public class NodeLinkerTest {
         //when
 
         //link childNodes as per the assignment
-        NodeLinker_Better nodeLinker = new NodeLinker_Better().setRootNode(rootNodeArg);
+        NodeLinker nodeLinker = new NodeLinker().setRootNode(rootNodeArg);
 
         //Linked Siblings organized in a bucket
-        Map<Integer, LinkedList<Node>> nodeArrayMap = nodeLinker.link();
+        Map<Integer, Node> nodeArrayMap = nodeLinker.extractLinkedSiblingMap();
 
         //then
 

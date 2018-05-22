@@ -1,8 +1,9 @@
 package com.nodelinker;
 
+import com.google.common.base.MoreObjects;
+
 import java.util.Arrays;
 import java.util.Objects;
-import com.google.common.base.MoreObjects;
 public class Node {
     public Node[] Children;
     public Node right;
@@ -21,9 +22,7 @@ public class Node {
         return Arrays.equals(Children, node.Children) &&
                 Objects.equals(right, node.right) &&
                 Objects.equals(name, node.name) &&
-                Objects.equals(level, node.level) &&
-
-                ;
+                Objects.equals(level, node.level) ;
     }
 
     @Override
@@ -44,6 +43,7 @@ public class Node {
                 .add("Children", this.Children)
                 .add("right", this.right)
                 .add("level",this.level)
+
                 .toString();
     }
 }
